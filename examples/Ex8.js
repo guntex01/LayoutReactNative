@@ -41,35 +41,27 @@ const DATA = [
 const DATAS = [
   {
     id: "1",
-    authorAvatar: require("../assets/instargram/instagram1.jpg"),
     authorName: "Tin của bạn",
     image: require("../assets/instargram/instagram1.jpg"),
-    isLiked: true,
-    viewCount: 600357,
+    isSeen: true,
   },
   {
     id: "2",
-    authorAvatar: require("../assets/bulb-on.jpg"),
     authorName: "Toàn",
     image: require("../assets/instargram/instagram2.jpg"),
-    isLiked: false,
-    viewCount: 100234,
+    isSeen: true,
   },
   {
     id: "3",
-    authorAvatar: require("../assets/bulb-on.jpg"),
     authorName: "Hưng",
     image: require("../assets/instargram/instagram3.jpg"),
-    isLiked: true,
-    viewCount: 354859,
+    isSeen: true,
   },
   {
     id: "4",
-    authorAvatar: require("../assets/bulb-on.jpg"),
     authorName: "Đức",
     image: require("../assets/instargram/instagram3.jpg"),
-    isLiked: true,
-    viewCount: 354859,
+    isSeen: true,
   },
 ];
 export default function Ex8() {
