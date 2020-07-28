@@ -1,34 +1,50 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import {StyleSheet, Text, View, SafeAreaView, TextInput, Image, TouchableOpacity, TouchableHighlight
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  TextInput,
+  Image,
+  TouchableOpacity,
+  Dimensions,
 } from "react-native";
 
-import iamgefb from "../assets/facebook.png";
-
+import imagefb from "../assets/facebookbanner.jpg";
+const windowWidth = Dimensions.get("window").width;
 export default function Ex6() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Image style={styles.images} source={iamgefb} />
-      <TextInput style={styles.sdt}>  </TextInput>
-      <TextInput style={styles.mk}>  </TextInput>
-      <TouchableOpacity style={styles.dn}> 
-      <Text style={styles.tx}> Đăng nhập </Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.qmk}> 
-      <Text style={styles.tx1} > Quên mật khẩu? </Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.ql}> 
-      <Text style={styles.tx2} > Quay lại </Text>
-      </TouchableOpacity>
-      <View style={styles.view1}> 
-        <View style={styles.view2}></View>
-        <Text style={styles.txh}> Hoặc </Text>
-        <View style={styles.view3}></View>
-      </View>
-      <TouchableOpacity style={styles.ttk}> 
-      <Text style={styles.txtk}> Tạo tài khoản mới </Text>
-      </TouchableOpacity>
-    </SafeAreaView>
+    <>
+      <Image style={styles.images} source={imagefb} />
+      <SafeAreaView style={styles.container}>
+        <StatusBar style="light" />
+        <View>
+          <TextInput
+            style={styles.phone}
+            placeholder="số điện thoại hoặc email"
+          />
+          <TextInput style={styles.password} placeholder="mật khẩu" />
+          <TouchableOpacity style={styles.buttonLogin}>
+            <Text style={styles.buttonLoginText}> Đăng nhập </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.forgotpassword}>
+            <Text style={styles.textForgotpassword}> Quên mật khẩu? </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.back}>
+            <Text style={styles.textback}> Quay lại </Text>
+          </TouchableOpacity>
+          <View style={styles.view1}>
+            <View style={styles.view2}></View>
+            <Text style={styles.textOr}> Hoặc </Text>
+            <View style={styles.view3}></View>
+          </View>
+          <TouchableOpacity style={styles.creatnewaccount}>
+            <Text style={styles.textCreatnewaccount}> Tạo tài khoản mới </Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    </>
   );
 }
 
@@ -41,21 +57,22 @@ const styles = StyleSheet.create({
   },
   images: {
     width: "100%",
-    height: 200
+    height: (windowWidth * 450) / 750,
   },
-  sdt: {
+  phone: {
     width: 350,
     height: 40,
     backgroundColor: "#fff",
     borderTopLeftRadius: 5,
-    borderTopRightRadius:5,
+    borderTopRightRadius: 5,
     alignSelf: "center",
     top: 20,
     borderColor: "lightgray",
-    borderWidth: 1
-
+    borderWidth: 1,
+    padding: 10,
+    borderBottomWidth: 0,
   },
-  mk: {
+  password: {
     width: 350,
     height: 40,
     backgroundColor: "#fff",
@@ -64,70 +81,70 @@ const styles = StyleSheet.create({
     borderColor: "lightgray",
     borderWidth: 1,
     borderBottomLeftRadius: 5,
-    borderBottomRightRadius: 5
+    borderBottomRightRadius: 5,
+    padding: 10,
   },
-  dn:{
-    backgroundColor: "blue",
+  buttonLogin: {
+    backgroundColor: "#1977f3",
     top: 40,
     width: 350,
     alignSelf: "center",
     height: 40,
     borderRadius: 5,
-    justifyContent: "center"
+    justifyContent: "center",
   },
-  tx: {
+  buttonLoginText: {
     color: "#fff",
     textAlign: "center",
     fontSize: 20,
   },
-  qmk: {
+  forgotpassword: {
     top: 60,
     alignSelf: "center",
   },
-  tx1:{
-    color: "blue",
-    fontSize: 15
+  textForgotpassword: {
+    color: "#286fdd",
+    fontSize: 15,
   },
-  ql:{
+  back: {
     top: 70,
-    alignSelf: "center"
+    alignSelf: "center",
   },
-  tx2: {
-    color: "blue",
-    fontSize: 15
+  textback: {
+    color: "#286fdd",
+    fontSize: 15,
   },
-  view1:{
+  view1: {
     top: 350,
     flexDirection: "row",
     justifyContent: "center",
-    
   },
-  view2:{
-    backgroundColor: "black",
+  view2: {
+    backgroundColor: "#e0e0e0",
     height: 1,
-    width: 100
+    width: 100,
   },
-  view3:{
-    backgroundColor: "black",
+  view3: {
+    backgroundColor: "#e0e0e0",
     height: 1,
-    width: 100
+    width: 100,
   },
-  txh:{
+  textOr: {
     fontSize: 20,
-    top: -11
+    top: -14,
   },
-  ttk:{
-    backgroundColor: "#99ebff",
-    width:350,
-    height:40,
+  creatnewaccount: {
+    backgroundColor: "#e7f3ff",
+    width: 350,
+    height: 40,
     alignSelf: "center",
     top: 350,
     borderRadius: 5,
-    justifyContent: "center"
+    justifyContent: "center",
   },
-  txtk:{
-    color: "blue",
+  textCreatnewaccount: {
+    color: "#9999ff",
     textAlign: "center",
-    fontSize: 20
+    fontSize: 20,
   },
 });
